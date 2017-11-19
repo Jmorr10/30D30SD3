@@ -1,0 +1,101 @@
+html, body {
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: #FAFAFA;
+    overflow-x: hidden;
+}
+
+header {
+    width: 100vw;
+    height: 60px;
+
+    color: #FAFAFA;
+    background-color: #212121;
+}
+
+#logo {
+    flex: 1;
+    margin-left: 16px;
+
+    font-size: 36px;
+    z-index: 9999;
+}
+
+header.open #logo {
+    position: fixed;
+    top: 3px;
+    left: 0;
+}
+
+#menu_toggle {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    padding: 16px;
+
+    z-index: 9999;
+}
+
+header.open #menu_toggle {
+    color: #FAFAFA;
+}
+
+#main_nav {
+    max-height: 0;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    background-color: #212121;
+    overflow: hidden;
+    transition: max-height 0.15s ease-out;
+}
+
+header.open #main_nav {
+    max-height: 400px;
+    transition: max-height 0.30s ease-in;
+}
+
+#main_nav a {
+    width: 100vw;
+    height: 48px;
+
+    color: #FAFAFA;
+    line-height: 48px;
+    text-decoration: none;
+    text-align: center;
+}
+
+#main_nav a:first-child {
+    margin-top: 76px;
+}
+
+#main_nav a:last-child {
+    margin-bottom: 8px;
+}
+
+hr {
+    background: #333;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, hsla(0, 0%, 0%, 0)), color-stop(50%, hsla(0, 0%, 0%, .75)), color-stop(100%, hsla(0, 0%, 0%, 0)));
+    background: -webkit-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, .75) 50%, hsla(0, 0%, 0%, 0) 100%);
+    background: -moz-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, .75) 50%, hsla(0, 0%, 0%, 0) 100%);
+    background: -ms-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, .75) 50%, hsla(0, 0%, 0%, 0) 100%);
+    background: -o-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, .75) 50%, hsla(0, 0%, 0%, 0) 100%);
+    background: linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, .75) 50%, hsla(0, 0%, 0%, 0) 100%);
+
+    border: 0;
+    height: 1px;
+    margin: 8px 0;
+}
+
+.d-flex hr {
+    flex: 0 0 1px;
+    width: 100%;
+}
