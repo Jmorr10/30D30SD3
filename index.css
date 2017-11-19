@@ -9,12 +9,26 @@ html, body {
     overflow-x: hidden;
 }
 
+p, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 16px;
+}
+
 header {
     width: 100vw;
     height: 60px;
 
-    color: #FAFAFA;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
     background-color: #212121;
+    color: #FAFAFA;
+    z-index: 10000;
+}
+
+main {
+    padding-top: 60px;
 }
 
 #logo {
@@ -25,12 +39,6 @@ header {
     z-index: 9999;
 }
 
-header.open #logo {
-    position: fixed;
-    top: 3px;
-    left: 0;
-}
-
 #menu_toggle {
     position: fixed;
     top: 0;
@@ -39,10 +47,6 @@ header.open #logo {
     padding: 16px;
 
     z-index: 9999;
-}
-
-header.open #menu_toggle {
-    color: #FAFAFA;
 }
 
 #main_nav {
@@ -79,6 +83,60 @@ header.open #main_nav {
 
 #main_nav a:last-child {
     margin-bottom: 8px;
+}
+
+.split-row > div {
+    flex: 1;
+}
+
+#headliner_img {
+    flex: 0 0 100%;
+    height: calc(50vh - 60px);
+}
+
+#headliner_side {
+    height: 50vh;
+
+    padding: 16px;
+}
+
+#headliner_side h1 {
+    font-family: 'Iceberg', cursive;
+}
+
+.call-banner,
+.call-section {
+    background-color: #212121;
+    color: #FAFAFA;
+    text-align: center;
+}
+
+.call-banner {
+    width: 100vw;
+    margin-left: -16px;
+    box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.2);
+    flex: 1;
+    margin-bottom: -16px;
+
+}
+
+.card-title-overlay {
+    background-color: rgba(21,21,21,0.7);
+    height: 40px;
+    line-height: 1.5;
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    right: 0;
+}
+
+
+/* Utility CSS */
+.anchor-point {
+    height: 0;
+    position: absolute;
+    top: -60px;
+    width: 100vw;
 }
 
 hr {
