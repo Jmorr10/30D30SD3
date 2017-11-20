@@ -21,10 +21,19 @@
         <link href="https://fonts.googleapis.com/css?family=Iceberg" rel="stylesheet">
 
         <link rel="stylesheet" href="index.css">
+
+        <!-- TODO: CHECK, AND POSSIBLY STANDARDIZE, THE HEIGHTS OF THE HEADER IMAGES -->
+        <!-- TODO: CHECK VERTICAL ALIGNMENT ON IMG TAGS -->
+        <!-- TODO: CREATE HTML FOR MODALS -->
+        <!-- TODO: IMPLEMENT MODAL JS -->
+        <!-- TODO: START WORK ON TABLET IMPLEMENTATION -->
+        <!-- TODO: START WORK ON DESKTOP IMPLEMENTATION -->
+
+
     </head>
     <body>
         <header class="d-flex flex-row flex-nowrap align-items-center">
-            <span id="logo">ICEHOTEL</span>
+            <span id="logo" class="ichtl-font">ICEHOTEL</span>
             <i id="menu_toggle" class="fa fa-bars fa-2x d-md-none" onclick="self.ICHTL.toggleMenu()"></i>
             <nav id="main_nav" class="d-flex flex-column flex-nowrap align-items-center">
                 <a href="#accommodations" onclick="ICHTL.toggleMenu();">Accommodations</a>
@@ -42,20 +51,18 @@
 
             <div class="d-flex flex-column flex-nowrap flex-md-row split-row">
                 <div class="card bg-dark text-white rounded-0">
-                    <img id="headliner_img" class="card-img rounded-0" src="img/headliner.jpg" alt="Headliner Image">
+                    <div id="headliner_img" class="card-img rounded-0"></div>
                     <div class="card-img-overlay d-flex align-items-center justify-content-center">
                         <h4 class="card-title">Blending Art & Experience</h4>
                     </div>
                 </div>
-                <div id="headliner_side" class="d-flex flex-column content-holder">
+                <div id="headliner_side" class="d-flex flex-column content-holder" style="padding-bottom: 0;">
                     <h1 class="text-center ichtl-font">ICEHOTEL</h1>
                     <p>Icehotel – a world famous hotel and an art exhibition made of ice and snow.
                         Founded in 1989, it is reborn in a new guise every winter, in the Swedish village
                         of Jukkasjärvi – 200 km north of the Arctic Circle. The Torne River, the arts, and
                         creating a setting for life-enriching moments are at the heart of it all.</p>
-                    <div class="d-flex justify-content-center align-items-center call-banner">
-                        <h3 class="m-0">Visit this winter and save 20%</h3>
-                    </div>
+                    <h3 class="call-section">Visit soon and save 20%</h3>
                     <p class="d-none d-md-block">This winter season there is big news— a whole new ice experience to
                         be enjoyed alongside our classic Icehotel experience. ICEHOTEL 365 is a permanent structure
                         that will include luxury suites, each with private relax and bathroom, and art suites, all
@@ -73,26 +80,26 @@
                 <div class="card bg-dark text-white rounded-0">
                     <img class="card-img rounded-0" src="img/accommodations.jpg" alt="Accommodations section image">
                     <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                        <h4 class="card-title">Accommodations</h4>
+                        <h4 class="card-title header-img-tag">Accommodations</h4>
                     </div>
                 </div>
                 <div class="d-flex flex-column content-holder">
-                    <h1 class="text-center ichtl-font">OUR ROOMS</h1>
+                    <h1 class="text-center ichtl-font">ROOMS</h1>
                     <p>Each suite is individually themed and hand carved by artists commissioned from around the world
                         and a wide range of disciplines.  Spending a night in Icehotel is a surreal experience and a
                         memory for life and in the morning you are awakened with a cup of hot lingonberry juice at
                         your bedside. The art suites are part of the new concept Icehotel 365, available all year
                         round thanks to a new specially designed building run on solar power.</p>
-                    <div class="d-flex flex-column text-center" style="margin-bottom: 16px;">
-                        <h3 class="call-section">Click a room to learn more!</h3>
-                        <div id="room_selector" class="d-flex flex-column flex-md-row row">
+                    <div class="d-flex flex-column text-center">
+                        <h3 class="call-section">Select a room to learn more!</h3>
+                        <div id="room_selector" class="d-flex flex-column flex-md-row">
                             <div class="card bg-dark text-white rounded-0">
                                 <img class="card-img rounded-0" src="img/art_suite.jpg" alt="Rooms - Art Suite">
                                 <div class="card-img-overlay d-flex align-items-center justify-content-center">
                                     <h4 class="card-title-overlay">Art Suite</h4>
                                 </div>
                             </div>
-                            <div class="card bg-dark text-white rounded-0">
+                            <div class="card bg-dark text-white rounded-0" style="margin-bottom:16px;">
                                 <img class="card-img rounded-0" src="img/deluxe_suite.jpg" alt="Rooms - Deluxe Suite">
                                 <div class="card-img-overlay d-flex align-items-center justify-content-center">
                                     <h4 class="card-title-overlay">Deluxe Suite</h4>
@@ -113,11 +120,11 @@
                 <div class="card bg-dark text-white rounded-0">
                     <img class="card-img rounded-0" src="img/amenities.jpg" alt="Amenities section image">
                     <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                        <h4 class="card-title">Amenities</h4>
+                        <h4 class="card-title header-img-tag">Amenities</h4>
                     </div>
                 </div>
                 <div class="d-flex flex-column content-holder">
-                    <h1 class="text-center ichtl-font">CREATURE COMFORTS</h1>
+                    <h1 class="text-center ichtl-font">COMFORTS</h1>
                     <p>Your stay with ICEHOTEL includes complimentary breakfast, a guided tour of the hotel, and
                         free entry to the sauna. In addition, our suites are all equipped with WiFi for your
                         convenience. We loan snowsuits, boots, mittens, and balaclava for those who prefer to
@@ -166,11 +173,11 @@
                 <div class="card bg-dark text-white rounded-0">
                     <img class="card-img rounded-0" src="img/amenities.jpg" alt="Activities section image">
                     <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                        <h4 class="card-title">Activities</h4>
+                        <h4 class="card-title header-img-tag">Activities</h4>
                     </div>
                 </div>
                 <div class="d-flex flex-column content-holder">
-                    <h1 class="text-center ichtl-font">EXPERIENCE</h1>
+                    <h1 class="text-center ichtl-font">EXPERIENCES</h1>
                     <p>We offer a variety of activities for our guests to enjoy during their stay at ICEHOTEL. You can
                         take up ice-sculpting lessons, see the Northern Lights, spend the day mushing dogs, or enjoy a
                         quiet-time while ice fishing. There's something for everyone at ICEHOTEL, and we're sure that
@@ -208,15 +215,16 @@
             </div>
 
             <!-- REQUEST INFO -->
+            <div id="request_info" class="anchor-point"></div>
             <div class="d-flex flex-column flex-nowrap flex-md-row split-row">
                 <div class="card bg-dark text-white rounded-0">
                     <img class="card-img rounded-0" src="img/request_info.jpg" alt="Request Info Section Image">
                     <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                        <h4 class="card-title">Request Info</h4>
+                        <h4 class="card-title header-img-tag">Request Info</h4>
                     </div>
                 </div>
                 <div class="d-flex flex-column content-holder">
-                    <h1 class="text-center ichtl-font">Inquire</h1>
+                    <h1 class="text-center ichtl-font">INQUIRE</h1>
                     <p>Thinking about staying at ICEHOTEL? Think you might need some more information before taking
                         the plunge? In any case, you can use the form below to get in touch with us. You can expect a
                         representative to contact you within two business days. We look forward to hearing from you!</p>
@@ -269,7 +277,46 @@
             </div>
 
         </main>
-        <footer></footer>
+        <footer>
+            <ul id="contact_footer">
+                <li>
+                    <i class="fa fa-home"></i>
+                    ICEHOTEL
+                    <br>
+                    Marknadsvägen 63
+                    <br>
+                    981 91 Jukkasjärvi, Sweden
+                </li>
+                <li>
+                    <i class="fa fa-phone"></i>
+                    +46 980 668 00
+                </li>
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="#request_info">Contact Us</a>
+                </li>
+            </ul>
+            <ul id="social_media">
+                <li>
+                    <a href="" class="fa fa-facebook"></a>
+                </li>
+                <li>
+                    <a href="" class="fa fa-instagram"></a>
+                </li>
+                <li>
+                    <a href="" class="fa fa-tripadvisor"></a>
+                </li>
+                <li>
+                    <a href="" class="fa fa-twitter"></a>
+                </li>
+                <li>
+                    <a href="" class="fa fa-youtube"></a>
+                </li>
+            </ul>
+            <hr style="margin: 16px 0;">
+            <span class="d-block text-center">© 2017 Joseph Morris - Text and Images belong to
+                <a href="https://www.icehotel.com">ICEHOTEL</a> and its respective contributors</span>
+        </footer>
 
 
         <script

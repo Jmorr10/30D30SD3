@@ -100,10 +100,9 @@ header.open #main_nav {
 #headliner_img {
     flex: 0 0 100%;
     height: calc(50vh - 60px);
-}
-
-#headliner_side {
-    height: 50vh;
+    background-image: url('img/headliner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #amenity_selector > .flex-row > .card:not(:first-child) {
@@ -142,24 +141,57 @@ header.open #main_nav {
     height: 48px;
 }
 
-.call-banner,
-.call-section {
+footer {
     background-color: #212121;
-    color: #FAFAFA;
-    text-align: center;
+    padding: 16px;
+    color: #FAFAFA !important;
 }
 
-.call-banner {
-    width: 100vw;
-    margin-left: -16px;
-    box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.2);
-    flex: 1;
-    margin-bottom: -16px;
+#contact_footer,
+#social_media {
+    list-style: none;
+}
 
+#contact_footer li {
+    padding-left: 30px;
+}
+
+#contact_footer li > i {
+    margin-right: 5px;
+    float: left;
+    margin-left: -30px;
+    margin-top: 4px;
+}
+
+#social_media {
+    padding: 0;
+    text-align: center;
+    margin: 16px 0 0 0;
+}
+
+#social_media li {
+    display: inline;
+}
+
+#social_media li > a {
+    background-color: #0b9adb;
+    color: #FAFAFA;
+    border-radius: 100px;
+    height: 48px;
+    width: 48px;
+    text-align: center;
+    line-height: 48px;
+}
+
+#social_media li:not(:first-child) > a {
+    margin-left: 8px;
 }
 
 /* APPLY TO AN H* ELEMENT! */
 .call-section {
+    background-color: #212121;
+    color: #FAFAFA;
+    text-align: center;
     width: 100vw;
     margin-left: -16px;
     box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.2);
@@ -168,10 +200,11 @@ header.open #main_nav {
     margin-right: -16px;
     height: 60px;
     line-height: 56px;
+    padding: 0 16px;
 }
 
 #room_selector > div {
-    margin-top: -1px;
+    margin-top: 16px;
 }
 
 .card-title-overlay {
@@ -188,15 +221,16 @@ header.open #main_nav {
 /* Utility CSS */
 .anchor-point {
     height: 0;
-    position: absolute;
-    top: -60px;
     width: 100vw;
+    position: relative;
+    top: -60px;
 }
 
 .content-holder {
     padding: 16px;
 }
 
+.header-img-tag,
 hr {
     background: #333;
     background: -webkit-gradient(linear, left top, right top, color-stop(0%, hsla(0, 0%, 0%, 0)), color-stop(50%, hsla(0, 0%, 0%, .75)), color-stop(100%, hsla(0, 0%, 0%, 0)));
@@ -209,6 +243,14 @@ hr {
     border: 0;
     height: 1px;
     margin: 8px 0;
+}
+
+.header-img-tag {
+    width: 100vw;
+    text-align: center;
+    margin: 0;
+    height: auto;
+
 }
 
 .d-flex hr {
