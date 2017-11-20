@@ -104,8 +104,6 @@ header.open #main_nav {
 
 #headliner_side {
     height: 50vh;
-
-    padding: 16px;
 }
 
 #amenity_selector > .flex-row > .card:not(:first-child) {
@@ -122,6 +120,26 @@ header.open #main_nav {
 
 #activity_selector .card:not(:first-child) {
     margin-top: 16px;
+}
+
+#request_info_form {
+    margin-top: 16px;
+}
+
+#request_info_form input:not(button),
+#request_info_form .input-group-addon {
+    margin-bottom: 16px;
+}
+
+#submit_form {
+    margin: 0 auto;
+    width: 125px;
+    background-color: #0b9adb;
+    color: #FAFAFA;
+    font-size: 24px;
+    font-weight: 500;
+    padding-top: .1em;
+    height: 48px;
 }
 
 .call-banner,
@@ -173,6 +191,10 @@ header.open #main_nav {
     position: absolute;
     top: -60px;
     width: 100vw;
+}
+
+.content-holder {
+    padding: 16px;
 }
 
 hr {

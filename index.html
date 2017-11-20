@@ -47,7 +47,7 @@
                         <h4 class="card-title">Blending Art & Experience</h4>
                     </div>
                 </div>
-                <div id="headliner_side" class="d-flex flex-column">
+                <div id="headliner_side" class="d-flex flex-column content-holder">
                     <h1 class="text-center ichtl-font">ICEHOTEL</h1>
                     <p>Icehotel – a world famous hotel and an art exhibition made of ice and snow.
                         Founded in 1989, it is reborn in a new guise every winter, in the Swedish village
@@ -76,7 +76,7 @@
                         <h4 class="card-title">Accommodations</h4>
                     </div>
                 </div>
-                <div class="d-flex flex-column" style="padding: 16px;">
+                <div class="d-flex flex-column content-holder">
                     <h1 class="text-center ichtl-font">OUR ROOMS</h1>
                     <p>Each suite is individually themed and hand carved by artists commissioned from around the world
                         and a wide range of disciplines.  Spending a night in Icehotel is a surreal experience and a
@@ -116,7 +116,7 @@
                         <h4 class="card-title">Amenities</h4>
                     </div>
                 </div>
-                <div class="d-flex flex-column" style="padding: 16px;">
+                <div class="d-flex flex-column content-holder">
                     <h1 class="text-center ichtl-font">CREATURE COMFORTS</h1>
                     <p>Your stay with ICEHOTEL includes complimentary breakfast, a guided tour of the hotel, and
                         free entry to the sauna. In addition, our suites are all equipped with WiFi for your
@@ -169,7 +169,7 @@
                         <h4 class="card-title">Activities</h4>
                     </div>
                 </div>
-                <div class="d-flex flex-column" style="padding: 16px;">
+                <div class="d-flex flex-column content-holder">
                     <h1 class="text-center ichtl-font">EXPERIENCE</h1>
                     <p>We offer a variety of activities for our guests to enjoy during their stay at ICEHOTEL. You can
                         take up ice-sculpting lessons, see the Northern Lights, spend the day mushing dogs, or enjoy a
@@ -207,6 +207,67 @@
                 </div>
             </div>
 
+            <!-- REQUEST INFO -->
+            <div class="d-flex flex-column flex-nowrap flex-md-row split-row">
+                <div class="card bg-dark text-white rounded-0">
+                    <img class="card-img rounded-0" src="img/request_info.jpg" alt="Request Info Section Image">
+                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                        <h4 class="card-title">Request Info</h4>
+                    </div>
+                </div>
+                <div class="d-flex flex-column content-holder">
+                    <h1 class="text-center ichtl-font">Inquire</h1>
+                    <p>Thinking about staying at ICEHOTEL? Think you might need some more information before taking
+                        the plunge? In any case, you can use the form below to get in touch with us. You can expect a
+                        representative to contact you within two business days. We look forward to hearing from you!</p>
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <h3 class="call-section">Get in contact with us!</h3>
+                        <form id="request_info_form">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <input type="text" name="first_name"
+                                           class="form-control" placeholder="First Name"
+                                           id="inputFirstName">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" name="last_name"
+                                           class="form-control" placeholder="Last Name"
+                                           id="inputLastName">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <input type="text" name="phone_number"
+                                           class="form-control" placeholder="Phone Number"
+                                           id="inputPhoneNumber">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" name="email"
+                                           class="form-control" placeholder="Email"
+                                           id="inputEmail" required>
+                                </div>
+                            </div>
+                            <label for="inputCheckInDate">Tentative Dates</label>
+                            <div class="form-row">
+                                <div class="input-group col-md-6">
+                                    <span class="input-group-addon" id="inputCheckIn">Check-In</span>
+                                    <input type="date" class="form-control"
+                                           aria-describedby="inputCheckIn" id="inputCheckInDate">
+                                </div>
+                                <div class="input-group col-md-6">
+                                    <span class="input-group-addon" id="inputCheckOut">Check-Out</span>
+                                        <input type="date" class="form-control"
+                                               aria-describedby="inputCheckOut" id="inputCheckOutDate">
+                                </div>
+                            </div>
+                            <button id="submit_form" class="btn d-block text-center"
+                                    onclick="ICHTL.submitForm(this, event)">Submit</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
         </main>
         <footer></footer>
 
@@ -226,9 +287,22 @@
 
         <script>
             ICHTL = {};
+
+            // Used to toggle the menu on small screens when clicking on the menu button
             ICHTL.toggleMenu = function () {
                 $('header').toggleClass('open');
             };
+
+            // Alerts the user that the form has been submitted
+            ICHTL.submitForm = function (el, ev) {
+                var form = $(el).closest("form");
+
+                if (form.checkValidity()) {
+                    ev.preventDefault();
+                    form.reset();
+                    alert("Form successfully submitted!");
+                }
+            }
         </script>
 
     </body>
