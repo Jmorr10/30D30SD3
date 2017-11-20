@@ -27,16 +27,19 @@
             <span id="logo">ICEHOTEL</span>
             <i id="menu_toggle" class="fa fa-bars fa-2x d-md-none" onclick="self.ICHTL.toggleMenu()"></i>
             <nav id="main_nav" class="d-flex flex-column flex-nowrap align-items-center">
-                <a href="#accommodations">Accommodations</a>
+                <a href="#accommodations" onclick="ICHTL.toggleMenu();">Accommodations</a>
                 <hr>
-                <a href="#amenities">Amenities</a>
+                <a href="#amenities" onclick="ICHTL.toggleMenu();">Amenities</a>
                 <hr>
-                <a href="#activities">Activities</a>
+                <a href="#activities" onclick="ICHTL.toggleMenu();">Activities</a>
                 <hr>
-                <a href="#request_info">Request Info</a>
+                <a href="#request_info" onclick="ICHTL.toggleMenu();">Request Info</a>
             </nav>
         </header>
         <main>
+
+            <!-- HEADLINER -->
+
             <div class="d-flex flex-column flex-nowrap flex-md-row split-row">
                 <div class="card bg-dark text-white rounded-0">
                     <img id="headliner_img" class="card-img rounded-0" src="img/headliner.jpg" alt="Headliner Image">
@@ -62,6 +65,9 @@
                     <!-- TODO: INSERT MORE DESKTOP CONTENT HERE -->
                 </div>
             </div>
+
+            <!-- ACCOMMODATIONS -->
+
             <div id="accommodations" class="anchor-point"></div>
             <div class="d-flex flex-row flex-wrap" style="margin-top: -1px;">
                 <div class="card bg-dark text-white rounded-0">
@@ -99,6 +105,9 @@
                         overnight wilderness excursions.</p>
                 </div>
             </div>
+
+            <!-- AMENITIES -->
+
             <div id="amenities" class="anchor-point"></div>
             <div class="d-flex flex-row flex-wrap" style="margin-top: -1px;">
                 <div class="card bg-dark text-white rounded-0">
@@ -109,13 +118,13 @@
                 </div>
                 <div class="d-flex flex-column" style="padding: 16px;">
                     <h1 class="text-center ichtl-font">CREATURE COMFORTS</h1>
-                    <p>You stay with ICEHOTEL includes complimentary breakfast, a guided tour of the hotel, and
+                    <p>Your stay with ICEHOTEL includes complimentary breakfast, a guided tour of the hotel, and
                         free entry to the sauna. In addition, our suites are all equipped with WiFi for your
                         convenience. We loan snowsuits, boots, mittens, and balaclava for those who prefer to
                         pack lighter. Each suite also provides a private changing cubicle and storage for your
                         luggage. Besides these basic offerings, ICEHOTEL features a number of other amenities to take
                         advantage of during your stay. Learn more about these amenities below.</p>
-                    <div class="d-flex flex-column text-center" style="margin-bottom: 16px;">
+                    <div class="d-flex flex-column text-center">
                         <div id="amenity_selector" class="d-flex flex-column flex-md-row">
                             <div class="d-flex flex-row flex-nowrap">
                                 <div class="card bg-dark text-white rounded-0">
@@ -147,11 +156,57 @@
                             </div>
                         </div>
                     </div>
-                    <p class="m-0">Browse our rooms and rates. We offer warm and cold accommodation and we recommend you to book
-                        one night cold and a couple warm, starting or ending with the cold night. We also provide
-                        overnight wilderness excursions.</p>
                 </div>
             </div>
+
+            <!-- ACTIVITIES-->
+
+            <div id="activities" class="anchor-point"></div>
+            <div class="d-flex flex-row flex-wrap" style="margin-top: -1px;">
+                <div class="card bg-dark text-white rounded-0">
+                    <img class="card-img rounded-0" src="img/amenities.jpg" alt="Activities section image">
+                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                        <h4 class="card-title">Activities</h4>
+                    </div>
+                </div>
+                <div class="d-flex flex-column" style="padding: 16px;">
+                    <h1 class="text-center ichtl-font">EXPERIENCE</h1>
+                    <p>We offer a variety of activities for our guests to enjoy during their stay at ICEHOTEL. You can
+                        take up ice-sculpting lessons, see the Northern Lights, spend the day mushing dogs, or enjoy a
+                        quiet-time while ice fishing. There's something for everyone at ICEHOTEL, and we're sure that
+                        you'll leave having experience something new! Check out some of our activities below for more
+                        information.</p>
+                    <div class="d-flex flex-column text-center">
+                        <div id="activity_selector" class="d-flex flex-column flex-md-row">
+                            <div class="card bg-dark text-white rounded-0">
+                                <img class="card-img rounded-0" src="img/sledding.jpg" alt="Activity - Dog Sledding">
+                                <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                    <h4 class="card-title-overlay">Dog Sledding</h4>
+                                </div>
+                            </div>
+                            <div class="card bg-dark text-white rounded-0">
+                                <img class="card-img rounded-0" src="img/fishing.jpg" alt="Activity - Ice Fishing">
+                                <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                    <h4 class="card-title-overlay">Ice Fishing</h4>
+                                </div>
+                            </div>
+                            <div class="card bg-dark text-white rounded-0">
+                                <img class="card-img rounded-0" src="img/aurora.jpg" alt="Activity- Aurora Borealis">
+                                <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                    <h4 class="card-title-overlay">Northern Lights</h4>
+                                </div>
+                            </div>
+                            <div class="card bg-dark text-white rounded-0">
+                                <img class="card-img rounded-0" src="img/reindeer.jpg" alt="Activity - Reindeer">
+                                <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                    <h4 class="card-title-overlay">Meet Reindeer</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </main>
         <footer></footer>
 

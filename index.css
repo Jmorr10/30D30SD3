@@ -120,6 +120,10 @@ header.open #main_nav {
     margin-top:16px;
 }
 
+#activity_selector .card:not(:first-child) {
+    margin-top: 16px;
+}
+
 .call-banner,
 .call-section {
     background-color: #212121;
