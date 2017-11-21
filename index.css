@@ -316,3 +316,44 @@ hr {
     flex: 0 0 1px;
     width: 100%;
 }
+
+/* Media Queries */
+@media only screen and (min-width: 768px) {
+    #headlinerImg {
+        height: auto;
+    }
+
+    .header-img {
+        height: auto;
+        max-height: 500px;
+    }
+
+    #roomSelector > div:first-child {
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    #roomSelector > div:not(:first-child) {
+        margin-left: 16px;
+    }
+
+    #amenitySelector > .flex-row:not(:first-child) {
+        margin-top: 0;
+        margin-left: 16px;
+    }
+
+    #amenitySelector > .flex-row:not(:first-child) {
+        margin-top: 0;
+        margin-left: 16px;
+    }
+
+    #activitySelector .card:not(:first-child) {
+        margin-top: 0;
+        margin-left: 16px;
+    }
+
+    #activitySelector .card-title-overlay {
+        height: auto;
+        font-size: 1.25rem;
+    }
+}
