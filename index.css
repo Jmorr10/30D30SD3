@@ -9,8 +9,24 @@ html, body {
     overflow-x: hidden;
 }
 
+a {
+    color: #0b9adb !important;
+}
+
 p, h1, h2, h3, h4, h5, h6 {
     margin-bottom: 16px;
+}
+
+.ichtl-blue {
+    color: #0b9adb;
+}
+
+.ichtl-white {
+    color: #FAFAFA;
+}
+
+.ichtl-background-blue {
+    background-color: #0b9adb;
 }
 
 h1.ichtl-font {
@@ -47,7 +63,7 @@ main {
     z-index: 9999;
 }
 
-#menu_toggle {
+#menuToggle {
     position: fixed;
     top: 0;
     right: 0;
@@ -57,7 +73,7 @@ main {
     z-index: 9999;
 }
 
-#main_nav {
+#mainNav {
     max-height: 0;
 
     position: fixed;
@@ -70,12 +86,12 @@ main {
     transition: max-height 0.15s ease-out;
 }
 
-header.open #main_nav {
+header.open #mainNav {
     max-height: 400px;
     transition: max-height 0.30s ease-in;
 }
 
-#main_nav a {
+#mainNav a {
     width: 100vw;
     height: 48px;
 
@@ -85,11 +101,11 @@ header.open #main_nav {
     text-align: center;
 }
 
-#main_nav a:first-child {
+#mainNav a:first-child {
     margin-top: 76px;
 }
 
-#main_nav a:last-child {
+#mainNav a:last-child {
     margin-bottom: 8px;
 }
 
@@ -97,40 +113,37 @@ header.open #main_nav {
     flex: 1;
 }
 
-#headliner_img {
+#headlinerImg {
     flex: 0 0 100%;
     height: calc(50vh - 60px);
-    background-image: url('img/headliner.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
-#amenity_selector > .flex-row > .card:not(:first-child) {
+#amenitySelector > .flex-row > .card:not(:first-child) {
     margin-left: 16px;
 }
 
-#amenity_selector .card {
+#amenitySelector .card {
     flex: 1;
 }
 
-#amenity_selector > .flex-row:not(:first-child) {
+#amenitySelector > .flex-row:not(:first-child) {
     margin-top:16px;
 }
 
-#activity_selector .card:not(:first-child) {
+#activitySelector .card:not(:first-child) {
     margin-top: 16px;
 }
 
-#request_info_form {
+#requestInfoForm {
     margin-top: 16px;
 }
 
-#request_info_form input:not(button),
-#request_info_form .input-group-addon {
+#requestInfoForm input:not(button),
+#requestInfoForm .input-group-addon {
     margin-bottom: 16px;
 }
 
-#submit_form {
+#submitForm {
     margin: 0 auto;
     width: 125px;
     background-color: #0b9adb;
@@ -147,35 +160,35 @@ footer {
     color: #FAFAFA !important;
 }
 
-#contact_footer,
-#social_media {
+#contactFooter,
+#socialMedia {
     list-style: none;
 }
 
-#contact_footer li {
+#contactFooter li {
     padding-left: 30px;
 }
 
-#contact_footer li > i {
+#contactFooter li > i {
     margin-right: 5px;
     float: left;
     margin-left: -30px;
     margin-top: 4px;
 }
 
-#social_media {
+#socialMedia {
     padding: 0;
     text-align: center;
     margin: 16px 0 0 0;
 }
 
-#social_media li {
+#socialMedia li {
     display: inline;
 }
 
-#social_media li > a {
+#socialMedia li > a {
     background-color: #0b9adb;
-    color: #FAFAFA;
+    color: #FAFAFA !important;
     border-radius: 100px;
     height: 48px;
     width: 48px;
@@ -183,7 +196,7 @@ footer {
     line-height: 48px;
 }
 
-#social_media li:not(:first-child) > a {
+#socialMedia li:not(:first-child) > a {
     margin-left: 8px;
 }
 
@@ -203,20 +216,65 @@ footer {
     padding: 0 16px;
 }
 
-#room_selector > div {
+#roomSelector > div {
     margin-top: 16px;
+}
+
+.card-img-overlay {
+    pointer-events: none;
 }
 
 .card-title-overlay {
     background-color: rgba(21,21,21,0.7);
     height: 40px;
-    line-height: 1.5;
+    line-height: 1.6;
     position: absolute;
+    pointer-events: none;
     bottom: -16px;
     left: 0;
     right: 0;
 }
 
+#amenitySelector .card-title-overlay {
+    height: auto;
+}
+
+.header-img {
+    height: 275px;
+    max-height: 275px;
+}
+
+/* Modal CSS */
+.modal-dialog {
+    padding-top: 59px !important;
+}
+
+.pg.art-suite,
+.pg.deluxe-suite,
+.ttl.art-suite,
+.ttl.deluxe-suite {
+    display:none !important;
+}
+
+.pg.show,
+.ttl.show {
+    display: block !important;
+}
+
+.modal-img-holder > img:not(:first-child) {
+    margin-top: 16px;
+}
+
+#leftArrow a ,
+#rightArrow a {
+    color: #212121 !important;
+}
+
+.modal-btn {
+    flex: 1;
+    max-width: 200px;
+    color: #FAFAFA !important;
+}
 
 /* Utility CSS */
 .anchor-point {
@@ -250,6 +308,7 @@ hr {
     text-align: center;
     margin: 0;
     height: auto;
+    line-height: 35px;
 
 }
 

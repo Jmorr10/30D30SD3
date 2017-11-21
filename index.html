@@ -22,10 +22,6 @@
 
         <link rel="stylesheet" href="index.css">
 
-        <!-- TODO: CHECK, AND POSSIBLY STANDARDIZE, THE HEIGHTS OF THE HEADER IMAGES -->
-        <!-- TODO: CHECK VERTICAL ALIGNMENT ON IMG TAGS -->
-        <!-- TODO: CREATE HTML FOR MODALS -->
-        <!-- TODO: IMPLEMENT MODAL JS -->
         <!-- TODO: START WORK ON TABLET IMPLEMENTATION -->
         <!-- TODO: START WORK ON DESKTOP IMPLEMENTATION -->
 
@@ -33,16 +29,16 @@
     </head>
     <body>
         <header class="d-flex flex-row flex-nowrap align-items-center">
-            <span id="logo" class="ichtl-font">ICEHOTEL</span>
-            <i id="menu_toggle" class="fa fa-bars fa-2x d-md-none" onclick="self.ICHTL.toggleMenu()"></i>
-            <nav id="main_nav" class="d-flex flex-column flex-nowrap align-items-center">
+            <span id="logo">ICEHOTEL</span>
+            <i id="menuToggle" class="fa fa-bars fa-2x d-md-none" onclick="self.ICHTL.toggleMenu()"></i>
+            <nav id="mainNav" class="d-flex flex-column flex-nowrap align-items-center">
                 <a href="#accommodations" onclick="ICHTL.toggleMenu();">Accommodations</a>
                 <hr>
                 <a href="#amenities" onclick="ICHTL.toggleMenu();">Amenities</a>
                 <hr>
                 <a href="#activities" onclick="ICHTL.toggleMenu();">Activities</a>
                 <hr>
-                <a href="#request_info" onclick="ICHTL.toggleMenu();">Request Info</a>
+                <a href="#requestInfo" onclick="ICHTL.toggleMenu();">Request Info</a>
             </nav>
         </header>
         <main>
@@ -51,12 +47,12 @@
 
             <div class="d-flex flex-column flex-nowrap flex-md-row split-row">
                 <div class="card bg-dark text-white rounded-0">
-                    <div id="headliner_img" class="card-img rounded-0"></div>
+                    <img id="headlinerImg" class="card-img rounded-0" src="img/headliner.jpg">
                     <div class="card-img-overlay d-flex align-items-center justify-content-center">
                         <h4 class="card-title">Blending Art & Experience</h4>
                     </div>
                 </div>
-                <div id="headliner_side" class="d-flex flex-column content-holder" style="padding-bottom: 0;">
+                <div id="headlinerSide" class="d-flex flex-column content-holder" style="padding-bottom: 0;">
                     <h1 class="text-center ichtl-font">ICEHOTEL</h1>
                     <p>Icehotel – a world famous hotel and an art exhibition made of ice and snow.
                         Founded in 1989, it is reborn in a new guise every winter, in the Swedish village
@@ -78,7 +74,7 @@
             <div id="accommodations" class="anchor-point"></div>
             <div class="d-flex flex-row flex-wrap" style="margin-top: -1px;">
                 <div class="card bg-dark text-white rounded-0">
-                    <img class="card-img rounded-0" src="img/accommodations.jpg" alt="Accommodations section image">
+                    <img class="card-img rounded-0 header-img" src="img/accommodations.jpg" alt="Accommodations section image">
                     <div class="card-img-overlay d-flex align-items-center justify-content-center">
                         <h4 class="card-title header-img-tag">Accommodations</h4>
                     </div>
@@ -92,15 +88,19 @@
                         round thanks to a new specially designed building run on solar power.</p>
                     <div class="d-flex flex-column text-center">
                         <h3 class="call-section">Select a room to learn more!</h3>
-                        <div id="room_selector" class="d-flex flex-column flex-md-row">
+                        <div id="roomSelector" class="d-flex flex-column flex-md-row">
                             <div class="card bg-dark text-white rounded-0">
-                                <img class="card-img rounded-0" src="img/art_suite.jpg" alt="Rooms - Art Suite">
+                                <a href="#roomModal" role="button" onclick="ICHTL.roomModal('art-suite');">
+                                    <img class="card-img rounded-0" src="img/art_suite.jpg" alt="Rooms - Art Suite">
+                                </a>
                                 <div class="card-img-overlay d-flex align-items-center justify-content-center">
                                     <h4 class="card-title-overlay">Art Suite</h4>
                                 </div>
                             </div>
                             <div class="card bg-dark text-white rounded-0" style="margin-bottom:16px;">
-                                <img class="card-img rounded-0" src="img/deluxe_suite.jpg" alt="Rooms - Deluxe Suite">
+                                <a href="#roomModal" role="button" onclick="ICHTL.roomModal('deluxe-suite');">
+                                    <img class="card-img rounded-0" src="img/deluxe_suite.jpg" alt="Rooms - Deluxe Suite">
+                                </a>
                                 <div class="card-img-overlay d-flex align-items-center justify-content-center">
                                     <h4 class="card-title-overlay">Deluxe Suite</h4>
                                 </div>
@@ -118,7 +118,7 @@
             <div id="amenities" class="anchor-point"></div>
             <div class="d-flex flex-row flex-wrap" style="margin-top: -1px;">
                 <div class="card bg-dark text-white rounded-0">
-                    <img class="card-img rounded-0" src="img/amenities.jpg" alt="Amenities section image">
+                    <img class="card-img rounded-0 header-img" src="img/amenities.jpg" alt="Amenities section image">
                     <div class="card-img-overlay d-flex align-items-center justify-content-center">
                         <h4 class="card-title header-img-tag">Amenities</h4>
                     </div>
@@ -132,32 +132,40 @@
                         luggage. Besides these basic offerings, ICEHOTEL features a number of other amenities to take
                         advantage of during your stay. Learn more about these amenities below.</p>
                     <div class="d-flex flex-column text-center">
-                        <div id="amenity_selector" class="d-flex flex-column flex-md-row">
+                        <div id="amenitySelector" class="d-flex flex-column flex-md-row">
                             <div class="d-flex flex-row flex-nowrap">
                                 <div class="card bg-dark text-white rounded-0">
-                                    <img class="card-img rounded-0" src="img/sauna.jpg" alt="Amenity - Sauna">
+                                    <a href="#infoModal" role="button" onclick="ICHTL.infoModal('Sauna');">
+                                        <img class="card-img rounded-0" src="img/sauna.jpg" alt="Amenity - Sauna">
+                                    </a>
                                     <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                                        <h4 class="card-title-overlay">Sauna</h4>
+                                        <h5 class="card-title-overlay">Sauna</h5>
                                     </div>
                                 </div>
                                 <div class="card bg-dark text-white rounded-0">
-                                    <img class="card-img rounded-0" src="img/bar.jpg" alt="Amenity - Bar">
+                                    <a href="#infoModal" role="button" onclick="ICHTL.infoModal('Bar');">
+                                        <img class="card-img rounded-0" src="img/bar.jpg" alt="Amenity - Bar">
+                                    </a>
                                     <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                                        <h4 class="card-title-overlay">Bar</h4>
+                                        <h5 class="card-title-overlay">Bar</h5>
                                     </div>
                                 </div>
                             </div>
                             <div class="d-flex flex-row flex-nowrap">
                                 <div class="card bg-dark text-white rounded-0">
-                                    <img class="card-img rounded-0" src="img/lounge.jpg" alt="Amenity- Lounge">
+                                    <a href="#infoModal" role="button" onclick="ICHTL.infoModal('Lounge');">
+                                        <img class="card-img rounded-0" src="img/lounge.jpg" alt="Amenity- Lounge">
+                                    </a>
                                     <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                                        <h4 class="card-title-overlay">Lounge</h4>
+                                        <h5 class="card-title-overlay">Lounge</h5>
                                     </div>
                                 </div>
                                 <div class="card bg-dark text-white rounded-0">
-                                    <img class="card-img rounded-0" src="img/restaurant.jpg" alt="Amenity - Restaurant">
+                                    <a href="#infoModal" role="button" onclick="ICHTL.infoModal('Restaurant');">
+                                        <img class="card-img rounded-0" src="img/restaurant.jpg" alt="Amenity - Restaurant">
+                                    </a>
                                     <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                                        <h4 class="card-title-overlay">Restaurant</h4>
+                                        <h5 class="card-title-overlay">Restaurant</h5>
                                     </div>
                                 </div>
                             </div>
@@ -171,7 +179,7 @@
             <div id="activities" class="anchor-point"></div>
             <div class="d-flex flex-row flex-wrap" style="margin-top: -1px;">
                 <div class="card bg-dark text-white rounded-0">
-                    <img class="card-img rounded-0" src="img/amenities.jpg" alt="Activities section image">
+                    <img class="card-img rounded-0 header-img" src="img/activities.jpg" alt="Activities section image">
                     <div class="card-img-overlay d-flex align-items-center justify-content-center">
                         <h4 class="card-title header-img-tag">Activities</h4>
                     </div>
@@ -184,27 +192,35 @@
                         you'll leave having experience something new! Check out some of our activities below for more
                         information.</p>
                     <div class="d-flex flex-column text-center">
-                        <div id="activity_selector" class="d-flex flex-column flex-md-row">
+                        <div id="activitySelector" class="d-flex flex-column flex-md-row">
                             <div class="card bg-dark text-white rounded-0">
-                                <img class="card-img rounded-0" src="img/sledding.jpg" alt="Activity - Dog Sledding">
+                                <a href="#infoModal" role="button" onclick="ICHTL.infoModal('Sledding');">
+                                    <img class="card-img rounded-0" src="img/sledding.jpg" alt="Activity - Dog Sledding">
+                                </a>
                                 <div class="card-img-overlay d-flex align-items-center justify-content-center">
                                     <h4 class="card-title-overlay">Dog Sledding</h4>
                                 </div>
                             </div>
                             <div class="card bg-dark text-white rounded-0">
-                                <img class="card-img rounded-0" src="img/fishing.jpg" alt="Activity - Ice Fishing">
+                                <a href="#infoModal" role="button" onclick="ICHTL.infoModal('Fishing');">
+                                    <img class="card-img rounded-0" src="img/fishing.jpg" alt="Activity - Ice Fishing">
+                                </a>
                                 <div class="card-img-overlay d-flex align-items-center justify-content-center">
                                     <h4 class="card-title-overlay">Ice Fishing</h4>
                                 </div>
                             </div>
                             <div class="card bg-dark text-white rounded-0">
-                                <img class="card-img rounded-0" src="img/aurora.jpg" alt="Activity- Aurora Borealis">
+                                <a href="#infoModal" role="button" onclick="ICHTL.infoModal('Aurora');">
+                                    <img class="card-img rounded-0" src="img/aurora.jpg" alt="Activity- Aurora Borealis">
+                                </a>
                                 <div class="card-img-overlay d-flex align-items-center justify-content-center">
                                     <h4 class="card-title-overlay">Northern Lights</h4>
                                 </div>
                             </div>
                             <div class="card bg-dark text-white rounded-0">
-                                <img class="card-img rounded-0" src="img/reindeer.jpg" alt="Activity - Reindeer">
+                                <a href="#infoModal" role="button" onclick="ICHTL.infoModal('Reindeer');">
+                                    <img class="card-img rounded-0" src="img/reindeer.jpg" alt="Activity - Reindeer">
+                                </a>
                                 <div class="card-img-overlay d-flex align-items-center justify-content-center">
                                     <h4 class="card-title-overlay">Meet Reindeer</h4>
                                 </div>
@@ -215,10 +231,10 @@
             </div>
 
             <!-- REQUEST INFO -->
-            <div id="request_info" class="anchor-point"></div>
+            <div id="requestInfo" class="anchor-point"></div>
             <div class="d-flex flex-column flex-nowrap flex-md-row split-row">
                 <div class="card bg-dark text-white rounded-0">
-                    <img class="card-img rounded-0" src="img/request_info.jpg" alt="Request Info Section Image">
+                    <img class="card-img rounded-0 header-img" src="img/request_info.jpg" alt="Request Info Section Image">
                     <div class="card-img-overlay d-flex align-items-center justify-content-center">
                         <h4 class="card-title header-img-tag">Request Info</h4>
                     </div>
@@ -230,7 +246,7 @@
                         representative to contact you within two business days. We look forward to hearing from you!</p>
                     <div class="d-flex flex-column justify-content-center align-items-center">
                         <h3 class="call-section">Get in contact with us!</h3>
-                        <form id="request_info_form">
+                        <form id="requestInfoForm">
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <input type="text" name="first_name"
@@ -268,7 +284,7 @@
                                                aria-describedby="inputCheckOut" id="inputCheckOutDate">
                                 </div>
                             </div>
-                            <button id="submit_form" class="btn d-block text-center"
+                            <button id="submitForm" class="btn d-block text-center"
                                     onclick="ICHTL.submitForm(this, event)">Submit</button>
                         </form>
                     </div>
@@ -278,7 +294,7 @@
 
         </main>
         <footer>
-            <ul id="contact_footer">
+            <ul id="contactFooter">
                 <li>
                     <i class="fa fa-home"></i>
                     ICEHOTEL
@@ -293,24 +309,25 @@
                 </li>
                 <li>
                     <i class="fa fa-envelope"></i>
-                    <a href="#request_info">Contact Us</a>
+                    <a href="#requestInfo">Contact Us</a>
                 </li>
             </ul>
-            <ul id="social_media">
+            <ul id="socialMedia">
                 <li>
-                    <a href="" class="fa fa-facebook"></a>
+                    <a href="https://www.facebook.com/icehotel.sweden" class="fa fa-facebook"></a>
                 </li>
                 <li>
-                    <a href="" class="fa fa-instagram"></a>
+                    <a href="https://instagram.com/icehotelsweden" class="fa fa-instagram"></a>
                 </li>
                 <li>
-                    <a href="" class="fa fa-tripadvisor"></a>
+                    <a href="http://www.tripadvisor.com/Hotel_Review-g939981-d259843-Reviews-Icehotel-Jukkasjarvi_Norrbotten_County.html"
+                       class="fa fa-tripadvisor"></a>
                 </li>
                 <li>
-                    <a href="" class="fa fa-twitter"></a>
+                    <a href="https://twitter.com/ICEHOTEL_Sweden" class="fa fa-twitter"></a>
                 </li>
                 <li>
-                    <a href="" class="fa fa-youtube"></a>
+                    <a href="https://www.youtube.com/icehotelchannel" class="fa fa-youtube"></a>
                 </li>
             </ul>
             <hr style="margin: 16px 0;">
@@ -318,6 +335,136 @@
                 <a href="https://www.icehotel.com">ICEHOTEL</a> and its respective contributors</span>
         </footer>
 
+        <div class="modal fade" id="roomModal" tabindex="-1" role="dialog" aria-labelledby="roomTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="roomTitle">
+                            <span class="ttl art-suite">Art Suite 365</span>
+                            <span class="ttl deluxe-suite">Deluxe Suite 365</span>
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div id="roomBody" class="modal-body">
+                        <div class="pg art-suite">
+                            <img class="img-fluid" src="img/art_suite.jpg" alt="Image of Art Suite">
+                            <h1 class="text-center ichtl-font" style="margin-top: 16px;">ART SUITE</h1>
+                            <p>The art suites, like the winter suites, are our individually designed and sculpted
+                                thematic suites. The artists, perhaps from Kiruna, Germany, UK or the US have been
+                                picked from over two-hundred applicants and invited to make the suite you’ll be
+                                sleeping in. Each suite is unique and has never been created before.</p>
+                            <p>The room holds a temperature of -5 to -8 degrees Celsius. New for this year is that the
+                                suites are furnished with exclusive Carpe Diem Beds, that provide the best comfort.
+                                The bed is covered with reindeer hides and on top of this, you sleep in a thermal
+                                sleeping bag.</p>
+                            <p>The room has doors with locks for your privacy. In the Dressing Room, the warm building
+                                adjacent to Icehotel, you will find communal changing rooms, toilets and saunas for
+                                women and men. A complimentary private changing booth in Dressing Room is included
+                                when you book an Art Suite</p>
+                            <p>The concept Icehotel 365 makes the sleeping-on-ice experience available to combine with
+                                fall and summer adventures as well as the classic winter excursions. The interior hold
+                                the same standard and visual design as the winter structure. The exterior in winter
+                                will have the same shape and look as the adjacent winter structure, and in summer,
+                                the arched roof will be covered in grass.</p>
+                        </div>
+                        <div class="pg deluxe-suite">
+                            <img class="img-fluid" src="img/deluxe_suite.jpg" alt="Image of Deluxe Suite">
+                            <h1 class="text-center ichtl-font" style="margin-top: 16px;">DELUXE SUITE</h1>
+                            <p>The Deluxe Suites are our individually designed and sculpted thematic suites. The
+                                artists, perhaps from Kiruna, Germany, UK or the US have been picked from over
+                                two-hundred applicants and invited to make the suite you’ll be sleeping in. Each
+                                suite is unique and has never been created before.</p>
+                            <p>The room holds a temperature of -5 to -8 degrees Celsius. New for this year is that the
+                                suites are furnished with exclusive Carpe Diem Beds, that provide the best comfort.
+                                The bed is covered with reindeer hides and on top of this, you sleep in a thermal
+                                sleeping bag.</p>
+                            <p>The Deluxe Suite has a private heated bathroom and relaxation directly connected to the
+                                bedroom. The relaxation area also provides storage for your belongings. The suite has
+                                doors with locks for your privacy.</p>
+                            <p>The concept Icehotel 365 makes the sleeping-on-ice experience available to combine with
+                                fall and summer adventures as well as the classic winter excursions. The interior hold
+                                the same standard and visual design as the winter structure. The exterior in winter
+                                will have the same shape and look as the adjacent winter structure, and in summer,
+                                the arched roof will be covered in grass.</p>
+                        </div>
+                        <div class="pg art-suite deluxe-suite">
+                            <h4>Good to Know:</h4>
+                            <ul>
+                                <li>We recommend you to combine one night cold with a couple of nights warm, staying
+                                    your first or last night cold.</li>
+                                <li>We provide thermal sleeping bags, and guests bring personal thermal underwear
+                                    to sleep in.</li>
+                                <li>Toilets, showers and storage are located in the warm section of Icehotel,
+                                    staffed 24 h.</li>
+                                <li>Art suites are located in Icehotel 365, available all year.</li>
+                                <li>Check in and out of cold rooms is done in Dressing Room, the warm building
+                                    adjacent to Icehotel.</li>
+                                <li>If staying cold the day before or after, there is 6-7 hours between checking
+                                    out and getting access to your new room, we recommend you plan activities
+                                    during this period.</li>
+                                <li>We will store and move your luggage on request.</li>
+                                <li>While you cannot book a specific suite, you are welcome to make a request.</li>
+                                <li>Space on activities and transfers are limited and we advise you pre-book at least
+                                    three weeks in advance.</li>
+                                <li>Icehotel Restaurant and the Homestead have fixed dinner sittings, and we recommend
+                                    you reserve your table in advance.</li>
+                                <li>Photography of the rooms is from previous years and for guidance only.</li>
+                            </ul>
+                        </div>
+                        <div class="pg art-suite">
+                            <div class="d-flex flex-column flex-nowrap modal-img-holder">
+                                <img class="img-fluid" src="img/art_suite_1.jpg" alt="Image of an Art Suite">
+                                <img class="img-fluid" src="img/art_suite_2.jpg" alt="Image of an Art Suite">
+                                <img class="img-fluid" src="img/art_suite_3.jpg" alt="Image of an Art Suite">
+                            </div>
+                        </div>
+                        <div class="pg deluxe-suite">
+                            <div class="d-flex flex-column flex-nowrap modal-img-holder">
+                                <img class="img-fluid" src="img/accommodations.jpg" alt="Image of an Deluxe Suite">
+                                <img class="img-fluid" src="img/deluxe_suite_1.jpg" alt="Image of an Deluxe Suite">
+                                <img class="img-fluid" src="img/deluxe_suite_2.jpg" alt="Image of an Deluxe Suite">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex flex-nowrap justify-content-between">
+                        <div id="leftArrow" class="invisible">
+                            <a class="fa fa-chevron-left fa-2x" aria-hidden="true"
+                               role="button" onclick="ICHTL.modalChangePage(true)"></a>
+                        </div>
+                        <a class="btn ichtl-background-blue ichtl-white modal-btn"
+                        role="button" onclick="ICHTL.bookRoom()" href="#requestInfo">Book</a>
+                        <div id="rightArrow" class="visible">
+                            <a class="fa fa-chevron-right fa-2x" aria-hidden="true"
+                               role="button" onclick="ICHTL.modalChangePage()"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="infoModal" role="dialog" aria-labelledby="infoModalTitle" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="infoModalTitle"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img id="infoImg" class="img-fluid" src="" alt="">
+                        <div id="infoText">
+
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex flex-nowrap justify-content-center">
+                        <button type="button" class="btn modal-btn" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <script
                 src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -337,7 +484,7 @@
 
             // Used to toggle the menu on small screens when clicking on the menu button
             ICHTL.toggleMenu = function () {
-                $('header').toggleClass('open');
+                $("header").toggleClass("open");
             };
 
             // Alerts the user that the form has been submitted
@@ -349,7 +496,115 @@
                     form.reset();
                     alert("Form successfully submitted!");
                 }
-            }
+            };
+
+            ICHTL.roomModal = function (room) {
+                var modal = $("#roomModal"),
+                    modalBody = $("#roomBody"),
+                    titles = modal.find('.ttl'),
+                    pages = modalBody.children(".pg"),
+                    leftArrow = $('#leftArrow'),
+                    rightArrow = $('#rightArrow');
+
+                // Make sure that the elements were found, since jQuery will return an empty result
+                if (!ICHTL.elementExists($([
+                        modal,
+                        modalBody,
+                        titles,
+                        pages,
+                        leftArrow,
+                        rightArrow
+                    ]))
+                ) {
+                    return false;
+                }
+
+                // Hide all titles and pages first
+                titles.removeClass("show");
+                pages.removeClass("show");
+
+                titles.filter('.' + room).addClass("show");
+                pages.filter(".pg." + room).first().addClass("show");
+
+                leftArrow.attr("class", "invisible");
+                rightArrow.attr("class", "visible");
+
+                modal.data("currentRoom", room);
+                modal.modal('show');
+            };
+
+            ICHTL.elementExists = function (arg) {
+                var exists = true;
+                arg.each(function () {
+                    if (this.length == 0) {
+                        exists = false;
+                    }
+                });
+                return exists;
+            };
+
+            ICHTL.modalChangePage = function (backwards) {
+                var modal = $("#roomModal"),
+                    modalBody = $("#roomBody"),
+                    pages = modalBody.children(".pg"),
+                    room = "." + modal.data("currentRoom"),
+                    currentPage = pages.filter(".show").first(),
+                    rightArrow = $('#rightArrow'),
+                    leftArrow = $('#leftArrow'),
+                    nextPage =  (backwards) ?  currentPage.prevAll(room).not(".show").first()
+                        : currentPage.nextAll(room).not(".show").first(),
+                    isLastPage = (backwards) ? nextPage.prevAll(room).not(".show").length == 0
+                        : nextPage.nextAll(room).not(".show").length == 0,
+                    arrowClass = (isLastPage) ? "invisible" : "visible";
+
+                // Make sure that the elements were found, since jQuery will return an empty result
+                if (!ICHTL.elementExists($([
+                    modal,
+                    modalBody,
+                    pages,
+                    currentPage,
+                    nextPage,
+                    rightArrow,
+                    leftArrow]))
+                ) {
+                    return false;
+                }
+
+                currentPage.fadeOut(400, function () {
+                    $(this).removeClass("show");
+                });
+
+                nextPage.fadeIn(400, function () {
+                    $(this).addClass("show");
+                });
+
+                modal.animate({ scrollTop: 0 }, 'slow');
+
+                rightArrow.attr("class", arrowClass);
+                if (nextPage.length != 0) {
+                    leftArrow.attr('class', "visible");
+                }
+                if (backwards && isLastPage) {
+                    leftArrow.attr("class", "invisible");
+                    rightArrow.attr("class", "visible");
+                }
+            };
+
+            ICHTL.bookRoom = function () {
+                $('#roomModal').modal('hide');
+                return true;
+            };
+
+            ICHTL.infoModal = function (page) {
+                $('#infoText').load("fragments/" + page.toLowerCase() + ".html");
+                $('#infoModalTitle').text("Information - " + page);
+                $('#infoImg').attr('src', "img/" + page + ".jpg")
+                             .attr("alt", "Image of " + page);
+
+                $('#infoModal').modal("show");
+            };
+
+
         </script>
 
     </body>
