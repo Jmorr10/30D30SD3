@@ -13,11 +13,6 @@
               integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
               crossorigin="anonymous">
 
-        <link rel="stylesheet"
-              href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-              integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-              crossorigin="anonymous">
-
         <link href="https://fonts.googleapis.com/css?family=Iceberg" rel="stylesheet">
 
         <link rel="stylesheet" href="index.css">
@@ -29,7 +24,23 @@
         <header class="d-flex flex-row flex-nowrap align-items-center">
             <span id="logo">ICEHOTEL</span>
             <i id="menuToggle" class="fa fa-bars fa-2x d-md-none" onclick="self.ICHTL.toggleMenu()"></i>
-            <nav id="mainNav" class="d-flex flex-column flex-nowrap align-items-center">
+            <nav id="mainNav">
+                <ul class="nav d-none d-md-flex flex-row flex-nowrap align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#accommodations">Accommodations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#amenities">Amenities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#activities">Activities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#requestInfo">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+            <nav id="mobileNav" class="d-flex flex-column flex-nowrap align-items-center">
                 <a href="#accommodations" onclick="ICHTL.toggleMenu();">Accommodations</a>
                 <hr>
                 <a href="#amenities" onclick="ICHTL.toggleMenu();">Amenities</a>
@@ -43,14 +54,14 @@
 
             <!-- HEADLINER -->
 
-            <div class="d-flex flex-column flex-nowrap flex-lg-row split-row">
-                <div class="card bg-dark text-white rounded-0">
+            <div class="d-flex flex-column flex-nowrap split-row">
+                <div class="card bg-dark text-white rounded-0 tile">
                     <img id="headlinerImg" class="card-img rounded-0" src="img/headliner.jpg">
                     <div class="card-img-overlay d-flex align-items-center justify-content-center">
                         <h4 class="card-title">Blending Art & Experience</h4>
                     </div>
                 </div>
-                <div id="headlinerSide" class="d-flex flex-column content-holder" style="padding-bottom: 0;">
+                <div id="headlinerSide" class="d-flex flex-column content-holder tile" style="padding-bottom: 0;">
                     <h1 class="text-center ichtl-font">ICEHOTEL</h1>
                     <p>Icehotel – a world famous hotel and an art exhibition made of ice and snow.
                         Founded in 1989, it is reborn in a new guise every winter, in the Swedish village
@@ -71,13 +82,13 @@
 
             <div id="accommodations" class="anchor-point"></div>
             <div class="d-flex flex-row flex-wrap" style="margin-top: -1px;">
-                <div class="card bg-dark text-white rounded-0">
+                <div class="card bg-dark text-white rounded-0 tile">
                     <img class="card-img rounded-0 header-img" src="img/accommodations.jpg" alt="Accommodations section image">
                     <div class="card-img-overlay d-flex align-items-center justify-content-center">
                         <h4 class="card-title header-img-tag">Accommodations</h4>
                     </div>
                 </div>
-                <div class="d-flex flex-column content-holder">
+                <div class="d-flex flex-column content-holder tile">
                     <h1 class="text-center ichtl-font">ROOMS</h1>
                     <p>Each suite is individually themed and hand carved by artists commissioned from around the world
                         and a wide range of disciplines.  Spending a night in Icehotel is a surreal experience and a
@@ -115,13 +126,13 @@
 
             <div id="amenities" class="anchor-point"></div>
             <div class="d-flex flex-row flex-wrap" style="margin-top: -1px;">
-                <div class="card bg-dark text-white rounded-0">
+                <div class="card bg-dark text-white rounded-0 tile">
                     <img class="card-img rounded-0 header-img" src="img/amenities.jpg" alt="Amenities section image">
                     <div class="card-img-overlay d-flex align-items-center justify-content-center">
                         <h4 class="card-title header-img-tag">Amenities</h4>
                     </div>
                 </div>
-                <div class="d-flex flex-column content-holder">
+                <div class="d-flex flex-column content-holder tile">
                     <h1 class="text-center ichtl-font">COMFORTS</h1>
                     <p>Your stay with ICEHOTEL includes complimentary breakfast, a guided tour of the hotel, and
                         free entry to the sauna. In addition, our suites are all equipped with WiFi for your
@@ -176,13 +187,13 @@
 
             <div id="activities" class="anchor-point"></div>
             <div class="d-flex flex-row flex-wrap" style="margin-top: -1px;">
-                <div class="card bg-dark text-white rounded-0">
+                <div class="card bg-dark text-white rounded-0 tile">
                     <img class="card-img rounded-0 header-img" src="img/activities.jpg" alt="Activities section image">
                     <div class="card-img-overlay d-flex align-items-center justify-content-center">
                         <h4 class="card-title header-img-tag">Activities</h4>
                     </div>
                 </div>
-                <div class="d-flex flex-column content-holder">
+                <div class="d-flex flex-column content-holder tile">
                     <h1 class="text-center ichtl-font">EXPERIENCES</h1>
                     <p>We offer a variety of activities for our guests to enjoy during their stay at ICEHOTEL. You can
                         take up ice-sculpting lessons, see the Northern Lights, spend the day mushing dogs, or enjoy a
@@ -230,14 +241,14 @@
 
             <!-- REQUEST INFO -->
             <div id="requestInfo" class="anchor-point"></div>
-            <div class="d-flex flex-column flex-nowrap flex-lg-row split-row">
-                <div class="card bg-dark text-white rounded-0">
+            <div class="d-flex flex-column flex-nowrap split-row">
+                <div class="card bg-dark text-white rounded-0 tile">
                     <img class="card-img rounded-0 header-img" src="img/request_info.jpg" alt="Request Info Section Image">
                     <div class="card-img-overlay d-flex align-items-center justify-content-center">
                         <h4 class="card-title header-img-tag">Request Info</h4>
                     </div>
                 </div>
-                <div class="d-flex flex-column content-holder">
+                <div class="d-flex flex-column content-holder tile">
                     <h1 class="text-center ichtl-font">INQUIRE</h1>
                     <p>Thinking about staying at ICEHOTEL? Think you might need some more information before taking
                         the plunge? In any case, you can use the form below to get in touch with us. You can expect a
@@ -329,7 +340,7 @@
                 </li>
             </ul>
             <hr style="margin: 16px 0;">
-            <span class="d-block text-center" style="font-size: 11px;">© 2017 Joseph Morris - Text and Images belong to
+            <span id="copyright" class="d-block text-center">© 2017 Joseph Morris - Text and Images belong to
                 <a href="https://www.icehotel.com">ICEHOTEL</a> and its respective contributors</span>
         </footer>
 
@@ -458,7 +469,8 @@
                         </div>
                     </div>
                     <div class="modal-footer d-flex flex-nowrap justify-content-center">
-                        <button type="button" class="btn modal-btn" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn modal-btn ichtl-white ichtl-background-black"
+                                data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -473,9 +485,12 @@
                 integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
                 crossorigin="anonymous"></script>
 
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
                 integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
                 crossorigin="anonymous"></script>
+        -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 
         <script>
             ICHTL = {};
@@ -568,13 +583,8 @@
                     return false;
                 }
 
-                currentPage.fadeOut(400, function () {
-                    $(this).removeClass("show");
-                });
-
-                nextPage.fadeIn(400, function () {
-                    $(this).addClass("show");
-                });
+                currentPage.removeClass("show");
+                nextPage.addClass("show");
 
                 modal.animate({ scrollTop: 0 }, 'slow');
 
