@@ -100,7 +100,7 @@ self.ICHTL = (function () {
 
         $('#infoModalTitle').text("Information - " + page);
 
-        $('#infoImg').attr('src', "img/" + page + ".jpg")
+        $('#infoImg').attr('src', "img/" + page.toLowerCase() + ".jpg")
             .attr("alt", "Image of " + page);
 
         $('#infoModal').modal("show");
